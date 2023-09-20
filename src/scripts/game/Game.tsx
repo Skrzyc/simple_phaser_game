@@ -47,6 +47,14 @@ function createPhaser(dispatch: GameDispatch, initialState: GameState) {
       },
       type: Phaser.WEBGL,
       pixelArt: true,
+      physics:{
+        default: 'arcade',
+        arcade: {
+          debug: false,
+          gravity: {y:0}
+        }
+      },
+      // scene: GameScene
     };
 
     // store gameInstance as singleton for the app
@@ -141,7 +149,7 @@ export function handleResizeForPhaser() {
 export const Game = (): JSX.Element => {
   // we need to pass the game state's dispatch function down to Phaser
   const { dispatch, state: initialState } = useGame();
-
+ 
   // create phaser instance
   useEffect(() => {
     createPhaser(dispatch, initialState);

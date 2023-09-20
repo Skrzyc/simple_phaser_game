@@ -85,6 +85,7 @@ export class AlignUtils {
     if (!this.listeners.has(event)) this.listeners.set(event, []);
     this.listeners.get(event)!.push({ func, context });
   }
+  
   emit(event: string, ...args: any[]) {
     this.listeners.get(event)?.forEach((handle) => {
       handle.func.call(handle.context, ...args);

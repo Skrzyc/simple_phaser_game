@@ -2,10 +2,16 @@
   "name": "phaser-game-boilerplate",
   "version": "1.0.0",
   "main": "index.js",
-  "keywords": ["phaser", "WebGL", "vite", "game", "example"],
+  "keywords": [
+    "phaser",
+    "WebGL",
+    "vite",
+    "game",
+    "example"
+  ],
   "engines": {
     "npm": ">=8.11.0",
-    "node": ">=16.16.0 <17.0.0"
+    "node": ">=16.16.0"
   },
   "scripts": {
     "start": "npm run dev",
