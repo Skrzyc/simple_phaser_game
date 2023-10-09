@@ -1,26 +1,20 @@
-// maybe some log key pushes ??
-
 export default class InputSystem {
-  private game: Phaser.Game;
-  private keys: { [key: string]: Phaser.Input.Keyboard.Key } = {};
+  private _game!: Phaser.Scene;
+  // private _plugin!: Phaser.Input.Keyboard.KeyboardPlugin;
+  private _keys: { [key: string]: Phaser.Input.Keyboard.Key } = {};
 
-  constructor(game: Phaser.Game) {
-    this.game = game;
+  constructor(game: Phaser.Scene) {
+    this._game = game;
 
-    this.keys.left = this.game.input.keyboard.addKey(65);
-    this.keys.right = this.game.input.keyboard.addKey(68);
-    // this.keys.pause = this.game.input.keyboard.addKey(80);
+    this._keys.left = this._game.input.keyboard.addKey(65);
+    this._keys.right = this._game.input.keyboard.addKey(68);
   }
 
   get left() {
-    return this.keys.left;
+    return this._keys.left;
   }
 
   get right() {
-    return this.keys.right;
+    return this._keys.right;
   }
-
-  // get pause(){
-  //   return this.keys.pause;
-  // }
 }
